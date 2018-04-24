@@ -1,0 +1,34 @@
+{
+    "name": "noiselabs/build-your-own-neural-network",
+    "description": "Support code for the \"Build Your Own Neural Network With PHP\" talk",
+    "keywords": ["artificial intelligence", "machine learning", "neural networks"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vítor Brandão",
+            "email": "vitor@noiselabs.io"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "markrogoyski/math-php": "^0.38.0",
+        "monolog/monolog": "^1.23",
+        "webmozart/assert": "^1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Noiselabs\\Byonn\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Noiselabs\\Byonn\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

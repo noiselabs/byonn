@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Build your own Neural Network - Training Report</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <style>
+        .table {
+            background-color: white;
+            border: none;
+            border-radius: 8px;
+        }
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th,
+        .table-hover tbody tr:hover td pre, .table-hover tbody tr:hover th pre {
+            background-color: #6c757d;
+            color: #f8f9fa;
+        }
+        .tr-stripped {
+            background-color: rgba(0,0,0,.05);
+        }
+    </style>
+</head>
+<body class="bg-{{ theme }}">
+<div class="container-fluid bg-{{ theme }}">
+    <nav class="navbar navbar-light bg-{{ theme }}">
+        <span class="navbar-brand mb-0 h1"><h3><samp>Build your own Neural Network - Training Report</samp></h3></span>
+    </nav>
+    <table class="table table-bordered table-hover table-responsive table-sm">
+        <thead class="thead-dark">
+            {{ thead }}
+        </thead>
+        <tbody>
+            {{ content }}
+        </tbody>
+    </table>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
