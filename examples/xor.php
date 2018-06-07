@@ -17,7 +17,7 @@ $xorTrainingSet = new TrainingSet(
     [0, 1, 1, 0]
 );
 
-$trainingIterations = 20000;
+$trainingIterations = 50000;
 
 $neuralNetwork = new NeuralNetwork(
     new Topology([2, 2, 1], [
@@ -30,10 +30,10 @@ $neuralNetwork = new NeuralNetwork(
     ),
     new Optimizer\GradientDescent(0.1),
     new CostFunction\MeanSquaredError(),
-    new Debugger(__DIR__ . '/../build/xor-training.json', $trainingIterations / 10)
+    new Debugger(__DIR__ . '/../build/xor-training.json', $trainingIterations / 100)
 );
 
-$neuralNetwork->train($xorTrainingSet, $trainingIterations, 0.01);
+$neuralNetwork->train($xorTrainingSet, $trainingIterations, 0.001);
 
 echo "\n\nPredictions:";
 $inputs = $xorTrainingSet->getInputs();

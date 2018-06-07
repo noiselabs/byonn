@@ -23,6 +23,44 @@ $ composer install
 
 ## Usage
 
+Included is an example with a Neural Network configured to solve an XOR:
+
+```php
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Noiselabs\Byonn\Activation;
+use Noiselabs\Byonn\CostFunction;
+use Noiselabs\Byonn\Debug\Debugger;
+use Noiselabs\Byonn\Initializer;
+use Noiselabs\Byonn\Optimizer;
+use Noiselabs\Byonn\TrainingSet;
+use Noiselabs\Byonn\Topology;
+use Noiselabs\Byonn\NeuralNetwork;
+
+$xorTrainingSet = new TrainingSet(
+    [[0, 0], [0, 1], [1, 0], [1, 1]],
+    [0, 1, 1, 0]
+);
+
+$neuralNetwork = new NeuralNetwork(
+    new Topology([2, 2, 1], [
+        new Activation\Sigmoid(),
+        new Activation\Sigmoid(),
+    ]),
+    new Initializer\ParametersInitializer(
+        new Initializer\Zeros(),
+        new Initializer\RandomUniform(0, 1)
+    ),
+    new Optimizer\GradientDescent(0.1),
+    new CostFunction\MeanSquaredError()
+);
+
+$neuralNetwork->train($xorTrainingSet, 20000, 0.01);
+```
+
 To run the XOR example do:
 
 ```
